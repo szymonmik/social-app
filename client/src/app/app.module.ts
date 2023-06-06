@@ -9,12 +9,24 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule, BsDropdownConfig, BsDropdownDirective} from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { FriendsComponent } from './friends/friends.component';
+import { ListsComponent } from './lists/lists.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent,
+    MemberListComponent,
+    MemberDetailComponent,
+    MessagesComponent,
+    FriendsComponent,
+    ListsComponent
   ],
   imports: [
     BrowserModule,
