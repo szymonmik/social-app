@@ -4,6 +4,10 @@ import { AccountService } from '../_services/account.service';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, map } from 'rxjs';
 
+@Injectable({
+  providedIn: 'root'
+})
+
 @Injectable()
 class PermissionsService {
   

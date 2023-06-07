@@ -16,6 +16,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ListsComponent } from './lists/lists.component';
 import { ToastrModule } from 'ngx-toastr';
+import { FeedComponent } from './feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
     MemberDetailComponent,
     MessagesComponent,
     FriendsComponent,
-    ListsComponent
+    ListsComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,

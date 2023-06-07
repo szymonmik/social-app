@@ -30,7 +30,7 @@ export class NavComponent {
   
   login() {
     this.accountService.login(this.model).subscribe({
-      next: () => this.router.navigateByUrl('/friends'),
+      next: () => this.router.navigateByUrl('/feed'),
       error: error => this.toastr.error(error.error)
     })
   }
