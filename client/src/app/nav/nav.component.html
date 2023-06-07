@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" routerLink="/">Social App</a>
 
-        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountService.currentUser$ | async">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" >
             <li class="nav-item">
                 <a class="nav-link" routerLink="/feed" routerLinkActive="active">Feed</a>
             </li>
@@ -15,8 +15,8 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
             </li>
-            <li class="nav-item" (click)="logout()">
-                <a class="nav-link" href="#">Logout</a>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/members" routerLinkActive="active">Members</a>
             </li>
         </ul>
 
