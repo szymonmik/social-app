@@ -1,5 +1,6 @@
 ﻿using API.Data;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,30 +10,26 @@ namespace API.Controllers;
 [Authorize]
 public class UserController : BaseApiController
 {
-	private readonly DataContext _context;
+	private readonly IUserRepository _userRepository;
 
-	public UserController(DataContext context)
+	public UserController(IUserRepository userRepository)
 	{
-		_context = context;
+		_userRepository = userRepository;
 	}
 
-	[AllowAnonymous]
 	[HttpGet]
 	public async Task<ActionResult<IEnumerable<User>>> GetUsers()
 	{
-		var users = await _context.Users.ToListAsync();
-
-		return Ok(users);
+		return Ok(await _userRepository.GetUsersAsync());
 	}
 
-	[HttpGet("{id}")]
-	public async Task<ActionResult<User>> GetUser([FromRoute] int id)
+	[HttpGet("{login}")]
+	public async Task<ActionResult<User>> GetUser([FromRoute] string login)
 	{
-		var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
-
-		return Ok(user);
+		return Ok(await _userRepository.GetUserByLoginAsync(login));
 	}
 	
+	/*
 	[HttpPost]
 	public async Task<ActionResult<User>> AddUser([FromBody] User user)
 	{
@@ -41,7 +38,7 @@ public class UserController : BaseApiController
 			Login = user.Login,
 			PasswordHash = user.PasswordHash,
 			FirstName = user.FirstName,
-			SecondName = user.SecondName,
+			//SecondName = user.SecondName,
 			Surname = user.Surname
 		};
 
@@ -49,6 +46,6 @@ public class UserController : BaseApiController
 		await _context.SaveChangesAsync();
 
 		return Created($"/api/user/{newUser.Id}", null);
-	}
+	}*/
 
 }

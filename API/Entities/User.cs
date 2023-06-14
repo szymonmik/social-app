@@ -10,7 +10,7 @@ public class User
 	public byte[] PasswordHash { get; set; }
 	public byte[] PasswordSalt { get; set; }
 	public string FirstName { get; set; }
-	public string SecondName { get; set; }
+	//public string SecondName { get; set; }
 	public string Surname { get; set; }
 	public DateOnly DateOfBirth { get; set; }
 	public DateTime Created { get; set; } = DateTime.UtcNow;
