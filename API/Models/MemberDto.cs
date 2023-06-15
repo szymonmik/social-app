@@ -11,6 +11,7 @@ public class MemberDto
 	public string Login { get; set; }
 	public string FirstName { get; set; }
 	public string Surname { get; set; }
+	public string PhotoUrl { get; set; }
 	public int Age { get; set; }
 	public DateTime Created { get; set; }
 	public DateTime LastActive { get; set; }
